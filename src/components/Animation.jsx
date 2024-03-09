@@ -1,6 +1,9 @@
 // File for animation of navigation bar
 
 import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
 
 export function moveSearch(isActive) {
     if (isActive) {
@@ -19,6 +22,10 @@ export function moveSearch(isActive) {
 }
 
 export function onLoad() {
+
+    const elementsToAnimate = ["#footer-texts", "#copyright-message", "#footer-area"];
+
+
     gsap.from("#header", {
         opacity: 0,
         duration: 1,
@@ -37,6 +44,28 @@ export function onLoad() {
         delay: 0.9,
         duration: 1,
     });
+
+
+    gsap.from("#footer-area", {
+        opacity: 0.4,
+        duration: 1,
+        delay: 1,
+    });
+
+    gsap.from("#footer-texts", {
+        y: 20,
+        opacity: 0,
+        delay: 1,
+        duration: 1,
+    });
+
+    gsap.from("#copyright-message", {
+        y: -30,
+        opacity: 0,
+        delay: 1,
+        duration: 1,
+    });
+    
 }
 
 // toggle "isActive" only if search area is empty otherwise perform search operation
@@ -46,8 +75,7 @@ export function toggleActive(isActive, setIsActive) {
     if (searchArea.value == "") {
         setIsActive(!isActive);
         moveSearch(isActive);
-    } 
-    else {
+    } else {
         // perform search operation
         alert("Search operation will get performed");
     }

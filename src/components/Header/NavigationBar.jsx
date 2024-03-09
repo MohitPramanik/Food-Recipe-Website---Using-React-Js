@@ -1,7 +1,7 @@
 import React from "react";
 import Searchbar from "./Searchbar";
 import Logo from "../../Images/Logo_transparent.png";
-import { onLoad } from "./Animation";
+import { onLoad } from "../Animation";
 
 function NavigationBar() {
   return (

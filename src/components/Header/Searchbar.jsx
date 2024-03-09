@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { moveSearch, toggleActive } from "./Animation";
+import { moveSearch, toggleActive } from "../Animation";
 
 function Searchbar() {
     const [isActive, setIsActive] = useState(true); // to toggle search button
